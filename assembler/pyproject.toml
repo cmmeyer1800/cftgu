@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cftgu_assembler"
+dynamic = ["version"]
+dependencies = [
+  "httpx",
+  "gidgethub[httpx]>4.0.0",
+  "django>2.1; os_name != 'nt'",
+  "django>2.0; os_name == 'nt'",
+]
+requires-python = ">=3.11"
+authors = [
+  {name = "Collin Meyer", email = "collinmmeyer@gmail.com"},
+]
+maintainers = [
+  {name = "Collin Meyer", email = "collinmmeyer@gmail.com"},
+]
+description = "Computing From The Ground Up, Custom Assembly Compiler"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Programming Language :: Python"
+]
+
+[project.optional-dependencies]
+cli = [
+  "typer",
+  "rich",
+]
+
+[project.urls]
+Homepage = "https://github.com/cmmeyer1800/cftgu"
+Repository = "https://github.com/cmmeyer1800/cftgu.git"
+"Bug Tracker" = "https://github.com/cmmeyer1800/cftgu/issues"
+
+[project.scripts]
+cftgu-asm = "cftgu_assembler.cli:cli"

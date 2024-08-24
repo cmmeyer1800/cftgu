@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useLocation } from 'react-router-dom';
+import { FaGithub } from "react-icons/fa";
 
 import { ThemeUpdaterButton } from "./context/ThemeContext";
 
@@ -17,14 +17,15 @@ const Nav = () => {
     };
 
     return (
-        <nav className="navbar mt-4" role="navigation" aria-label="main navigation">
+        <nav className="navbar _nav" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item has-text-weight-bold" href="/"
                    onMouseEnter={slideTitleOpen} onMouseLeave={slideTitleClose}>
                     {titleText}
                 </a>
 
-                <a role="button" className={`navbar-burger ${burgOpen ? 'is-active': ''}`} aria-label="menu" onClick={() => setBurgOpen(!burgOpen)}
+                <a role="button" className={`navbar-burger ${burgOpen ? 'is-active': ''}`} href="/#more"
+                   aria-label="menu" onClick={(e) => {setBurgOpen(!burgOpen); e.preventDefault()}}
                 aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -36,11 +37,16 @@ const Nav = () => {
             <div id="navbarBasicExample" className={`navbar-menu ${burgOpen ? 'is-active': ''}`}>
                 <div className="navbar-start">
 
-                    <a className="navbar-item" href="/#docs" onClick={(e) => e.preventDefault()}>
-                        Github
+                    <a className="navbar-item" href="https://github.com/cmmeyer1800/cftgu">
+                        <span>Github</span>
+                        <span className="icon-text">
+                            <span className="icon">
+                                <FaGithub/>
+                            </span>
+                        </span>
                     </a>
 
-                    <div className="navbar-item has-dropdown is-hoverable">
+                    {/* <div className="navbar-item has-dropdown is-hoverable">
                         <a className="navbar-link">
                         More [WIP]
                         </a>
@@ -57,7 +63,7 @@ const Nav = () => {
                                 Report an issue [WIP]
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="navbar-end">
