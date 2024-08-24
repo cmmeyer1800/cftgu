@@ -10,7 +10,7 @@ clean:
 	@echo "Cleaning..."
 	rm -rf build
 
-.PHONY: style
-style:
-	@echo "Running clang-format..."
-	python scripts/style.py
+# .PHONY: style
+# style:
+# 	@echo "Running clang-format..."
+# 	python scripts/style.py

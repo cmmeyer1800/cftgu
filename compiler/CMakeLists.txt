@@ -9,6 +9,7 @@ set(MAIN_SRCS
     src/file/file.cpp
     src/parser/parser.cpp
     src/token/token.cpp
+    src/generate/bin.cpp
 )
 set(TEST_SRCS
     src/test.cpp
